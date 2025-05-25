@@ -1,0 +1,18 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "prepare": "husky install",
+        "lint-staged": "lint-staged --config .config/.lintstagedrc.json",
+        "rector:dry-run":  "docker run --rm -t -v `pwd`:`pwd` -w `pwd` php-code-quality /usr/local/lib/php-code-quality/vendor/bin/rector process  --config .config/rector.php --dry-run",
+        "phpstan": "docker run --rm -t -v `pwd`:`pwd` -w `pwd` php-code-quality php /usr/local/lib/php-code-quality/vendor/bin/phpstan analyse -l 0 --error-format=table"
+    },
+    "devDependencies": {
+        "axios": "^1.1.2",
+        "laravel-vite-plugin": "^0.7.2",
+        "vite": "^4.0.0",
+        "husky": "^8.0.0",
+        "lint-staged": "^13.0.3"
+    }
+}

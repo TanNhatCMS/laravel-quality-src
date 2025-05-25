@@ -1,0 +1,6 @@
+{
+    "*.php": [
+        "npm run rector:dry-run",
+        "npm run phpstan"
+    ]
+}
